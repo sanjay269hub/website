@@ -1,0 +1,41 @@
+@media print {
+  /* Remove controls and site chrome so the ledger/search output prints cleanly. */
+  header,
+  footer,
+  .finance-forms,
+  .search-filters,
+  #print-button,
+  .finance-message,
+  #result-count {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  .finance-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .finance-card {
+    border: 0;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .finance-table-wrap {
+    overflow: visible;
+  }
+
+  .finance-table-wrap table {
+    min-width: 0;
+  }
+
+  .finance-table-wrap th {
+    color: #000;
+    background: #ddd;
+  }
+}

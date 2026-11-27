@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Financial Search | Manning's School</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="finance.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <header>
+    <div class="box header-box">
+      <a href="index.html" class="logo">
+        <img src="images/Mannings-School-Insignia.webp" alt="School crest">
+        <span>Manning's School</span>
+      </a>
+      <button type="button" id="menu-button" aria-controls="main-nav" aria-expanded="false">Menu</button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="teacher_dashboard.html">Teacher Panel</a></li>
+          <li><a href="student_admin.html">Manage Students</a></li>
+          <li><a href="ledger.html">Financial Ledger</a></li>
+          <li><a href="search.html" class="active" aria-current="page">Financial Search</a></li>
+          <li><a href="viewer.html">Records Viewer</a></li>
+        </ul>
+      </nav>
+      <div class="account-controls">
+        <span id="signed-in-user"></span>
+        <button type="button" id="logout-button" class="account-button">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="finance-container">
+    <h1>Financial Search</h1>
+    <p id="finance-message" class="finance-message" role="status" aria-live="polite"></p>
+    <section class="finance-card" aria-labelledby="search-heading">
+      <!-- search.js applies all selected criteria together and renders read-only results. -->
+      <h2 id="search-heading">Find Student Accounts</h2>
+      <form id="search-form" class="search-filters">
+        <div>
+          <label for="search-text">Student name or ID</label>
+          <input type="search" id="search-text" autocomplete="off">
+        </div>
+        <div>
+          <label for="filter-cohort">Form</label>
+          <select id="filter-cohort"><option value="All">All forms</option></select>
+        </div>
+        <div>
+          <label for="filter-status">Payment status</label>
+          <select id="filter-status">
+            <option value="All">All statuses</option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+            <option value="Outstanding">Outstanding</option>
+          </select>
+        </div>
+        <button type="reset" class="secondary-button">Clear Filters</button>
+      </form>
+      <p id="result-count" aria-live="polite"></p>
+      <div class="finance-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th><th scope="col">Name</th><th scope="col">Form</th>
+              <th scope="col">Tuition</th><th scope="col">Balance</th><th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="search-body"></tbody>
+        </table>
+      </div>
+      <button type="button" id="print-button" class="button">Print Results</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Manning's School | Savanna-la-mar, Westmoreland</p>
+  </footer>
+  <script src="js/index.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/finance_common.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

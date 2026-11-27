@@ -1,0 +1,372 @@
+/*
+Name of Group Member & ID#:
+Tishauna Dawes-2307076
+Aundre Chamber-2303820
+Indera Mills-2307650
+Sanjay Finley-2007397
+
+Day/Time of Lab: Friday @7pm
+*/
+/* Shared color tokens keep the public pages and portal screens visually consistent. */
+:root {
+	--bgcolor: #f7f9fc;
+	--navy: #14305a;
+	--red: #d8321f;
+	--sky: #a9cfe8;
+	--light: #e8f2f9;
+	--gold: #c99a2e;
+}
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin:0;
+	font-family: Arial, sans-serif;
+	line-height:1.6;
+	color:#17202e;
+	background-color: var(--bgcolor);
+}
+
+h1,h2,h3{
+	font-family: Georgia, serif;
+	color: var(--navy);	
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+	outline: 3px solid var(--gold);
+	outline-offset: 2px;
+}
+
+img {
+	max-width: 100%;
+}
+
+.box{
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.section-color {
+  background-color: var(--light);
+}
+
+/* Shared header, navigation and logo layout. */
+header {
+  background-color: var(--navy);
+  border-top: 6px solid var(--red);
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo span {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+}
+
+nav a:hover {
+  background-color: var(--red);
+}
+
+nav a:focus-visible {
+  background-color: var(--red);
+}
+
+nav a.active {
+  border-bottom: 3px solid var(--gold);
+}
+
+#menu-button {
+  display: none;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* Landing page hero, school branding and primary action. */
+.mannings{
+  background-color: var(--sky);
+  border-bottom: 6px solid var(--navy);
+  padding: 40px 0;
+}
+
+.mannings-box {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.mannings-year {
+  font-family: Georgia, serif;
+  font-size: 6rem;
+  font-weight: bold;
+  color: var(--navy);
+  margin: 0;
+  display: inline-block;
+  line-height: 1;
+}
+
+.motto {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--red);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--navy);
+}
+
+.button:focus-visible {
+  background-color: var(--navy);
+}
+
+/* Shared footer and simple content-page components. */
+footer {
+  background-color: var(--navy);
+  color: var(--sky);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/*  About Page */
+.timeline-history {
+  border-left: 4px solid var(--sky);
+  padding-left: 20px;
+  list-style: none;
+  margin-left: 10px;
+}
+
+.timeline-history li {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+input[type="text"] {
+  max-width: 100%;
+  min-height: 2.5rem;
+  padding: 8px 10px;
+  border: 1px solid #8798ad;
+  border-radius: 3px;
+  font: inherit;
+}
+
+/* Sign-in form layout and feedback messages. */
+.login-card {
+  max-width: 34rem;
+  padding: 2rem;
+  border: 1px solid var(--sky);
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 4px 14px rgb(20 48 90 / 10%);
+}
+
+.login-card h1 {
+  margin-top: 0;
+}
+
+#login-form {
+  display: grid;
+  gap: 10px;
+}
+
+#login-form input {
+  width: 100%;
+}
+
+#login-form button {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+.login-message:not(:empty) {
+  padding: 10px;
+  color: #842029;
+  background-color: #f8d7da;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+  padding: 1.5rem;
+  border: 1px solid var(--sky);
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 4px 14px rgb(20 48 90 / 10%);
+}
+
+.contact-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #8798ad;
+  border-radius: 3px;
+  font: inherit;
+}
+
+.contact-field textarea {
+  resize: vertical;
+}
+
+.contact-help {
+  margin: 0;
+  color: #445267;
+  font-size: 0.9rem;
+}
+
+.contact-notice,
+.contact-message:not(:empty) {
+  max-width: 42rem;
+  padding: 0.75rem;
+  border-left: 4px solid var(--gold);
+  background-color: var(--light);
+}
+
+.contact-message.is-error {
+  color: #842029;
+  border-left-color: #b42318;
+  background-color: #f8d7da;
+}
+
+.contact-message.is-success {
+  color: #155724;
+  border-left-color: #198754;
+  background-color: #d1e7dd;
+}
+
+.demo-accounts {
+  margin-top: 1.5rem;
+}
+
+.prototype-notice {
+  margin-top: 1.25rem;
+  padding: 10px;
+  border-left: 4px solid var(--gold);
+  background: var(--light);
+}
+
+/* Shared table and vision/mission presentation. */
+.table-responsive {
+  overflow-x: auto;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--sky);
+}
+
+th {
+  background-color: var(--navy);
+  color: white;
+}
+
+.vision-statement{
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  text-align: center;
+}
+
+.vision-statement h2 {
+  border-bottom: 4px solid var(--red);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Stack navigation and page grids on smaller screens. */
+@media (max-width: 700px) {
+  #menu-button {
+    display: block;
+  }
+
+  #main-nav {
+    display: none;
+    width: 100%;
+  }
+
+  #main-nav.open {
+    display: block;
+  }
+
+  #main-nav ul,
+  .mannings-box,
+  .vision-statement {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .mannings-year {
+    font-size: 4.5rem;
+  }
+
+  #main-nav a {
+    padding: 10px 0;
+  }
+}
