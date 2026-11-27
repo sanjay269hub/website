@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Records Viewer | Manning's School</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header>
+    <div class="box header-box">
+      <a href="index.html" class="logo">
+        <img src="images/Mannings-School-Insignia.webp" alt="School crest">
+        <span>Manning's School</span>
+      </a>
+      <button type="button" id="menu-button" aria-controls="main-nav" aria-expanded="false">Menu</button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a id="dashboard-link" href="teacher_dashboard.html">Teacher Panel</a></li>
+          <li><a id="ledger-link" href="ledger.html" hidden>Financial Ledger</a></li>
+          <li><a id="search-link" href="search.html" hidden>Financial Search</a></li>
+          <li><a href="viewer.html" class="active" aria-current="page">Records Viewer</a></li>
+        </ul>
+      </nav>
+      <div class="account-controls">
+        <span id="signed-in-user"></span>
+        <button type="button" id="logout-button" class="account-button">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="viewer-container">
+    <!-- Viewer displays records allowed by the signed-in role without editing controls. -->
+    <h1>Records Viewer</h1>
+    <p id="viewer-message" class="viewer-message" role="status" aria-live="polite"></p>
+    <section class="viewer-panel" aria-labelledby="student-statement-heading">
+      <h2 id="student-statement-heading">Student Statement</h2>
+      <div class="viewer-filter">
+        <label for="student-pick">Choose a student</label>
+        <select id="student-pick">
+          <option value="">Choose a student</option>
+        </select>
+      </div>
+      <div id="statement" class="statement-grid">
+        <p>Select a student to view their profile and grades.</p>
+      </div>
+    </section>
+
+    <section class="viewer-panel" aria-labelledby="class-report-heading">
+      <h2 id="class-report-heading">Class Report</h2>
+      <div class="viewer-filter">
+        <label for="report-form">Filter by form</label>
+        <select id="report-form">
+          <option value="All">All forms</option>
+        </select>
+      </div>
+      <div id="report-stats" class="stat-grid" aria-live="polite"></div>
+      <div class="viewer-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Form</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Total</th>
+              <th scope="col">Grade</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody id="report-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Manning's School | Savanna-la-mar, Westmoreland</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/finance_common.js"></script>
+  <script src="js/viewer.js"></script>
+</body>
+</html>

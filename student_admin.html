@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Administration | Manning's School</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="student_admin.css">
+</head>
+<body>
+  <header>
+    <div class="box header-box">
+      <a href="index.html" class="logo">
+        <img src="images/Mannings-School-Insignia.webp" alt="School crest">
+        <span>Manning's School</span>
+      </a>
+      <button type="button" id="menu-button" aria-controls="main-nav" aria-expanded="false">Menu</button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="teacher_dashboard.html">Teacher Panel</a></li>
+          <li><a href="student_admin.html" class="active" aria-current="page">Manage Students</a></li>
+          <li><a href="ledger.html">Financial Ledger</a></li>
+          <li><a href="viewer.html">Records Viewer</a></li>
+        </ul>
+      </nav>
+      <div class="account-controls">
+        <span id="signed-in-user"></span>
+        <button type="button" id="logout-button" class="account-button">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="student-admin-container">
+    <!-- student_admin.js protects this form and synchronizes CRUD changes to the shared roster. -->
+    <h1>Student Administration</h1>
+    <p>Add, update, and remove students from the shared school roster.</p>
+    <p id="admin-message" role="status" aria-live="polite"></p>
+
+    <section class="admin-card" aria-labelledby="student-form-heading">
+      <h2 id="student-form-heading">Student Information</h2>
+      <form id="student-record-form">
+        <div class="student-fields">
+          <div>
+            <label for="student-name">Full Name</label>
+            <input id="student-name" name="name" type="text" maxlength="100" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="student-email">Email</label>
+            <input id="student-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="student-age">Age</label>
+            <input id="student-age" name="age" type="number" min="5" max="100" step="1" required>
+          </div>
+          <div>
+            <label for="student-form">Form</label>
+            <select id="student-form" name="form" required>
+              <option value="">Choose a form</option>
+              <option value="Form 1">Form 1</option>
+              <option value="Form 2">Form 2</option>
+              <option value="Form 3">Form 3</option>
+            </select>
+          </div>
+          <div>
+            <label for="student-subject">Subject</label>
+            <select id="student-subject" name="subject" required disabled>
+              <option value="">Choose a form first</option>
+            </select>
+          </div>
+        </div>
+        <div class="student-form-actions">
+          <button type="submit" id="save-student" class="button">Add Student</button>
+          <button type="button" id="cancel-edit" class="secondary-button" hidden>Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-card" aria-labelledby="student-list-heading">
+      <h2 id="student-list-heading">Student Roster</h2>
+      <div class="table-responsive">
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Student Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Age</th>
+              <th scope="col">Form</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="student-table-body">
+            <tr><td colspan="7" class="empty-state">Loading students...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Manning's School | Savanna-la-mar, Westmoreland</p>
+  </footer>
+
+  <script src="js/index.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/student_admin.js"></script>
+</body>
+</html>

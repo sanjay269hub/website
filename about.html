@@ -1,0 +1,92 @@
+<!--
+Name of Group Member & ID#:
+Tishauna Dawes - 2307076
+Aundre Chambers - 2303820
+Indera Mills - 2307650
+Sanjay Finley - 2007397
+
+Day/Time of Lab: Friday @7pm
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>About Us | Manning's School</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<div class="box header-box">
+				<a href="index.html" class="logo">
+					<img src="images/Mannings-School-Insignia.webp" alt="School crest">
+					<span> Manning's School</span>
+				</a>
+				<button type="button" id="menu-button" aria-controls="main-nav" aria-expanded="false">Menu</button>
+				<nav id="main-nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="teacher_dashboard.html">Teacher Panel</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<main>
+			<!-- School background and mission content. -->
+			<section class="section section-color">
+				<div class="box">
+					<h2>The History of Manning's School</h2>
+					<p>
+						The history of the Manning’s School dates back to a quarter of a century before the actual setting up of the school when in 1710, Thomas Manning, a Westmoreland planter, bequeathed a gift of land for the setting up of a free school in the parish of Westmoreland.<br>
+
+						The legal formalities which facilitated the effecting of his will were formalised in 1738 when the Jamaica Assembly made this possible by the passing of an Act, Eleventh George II chapter 9, after which the Free School was formally established.<br>
+
+						
+						In 1780, a hurricane did extensive damage to the school and the Board petitioned the House of Assembly for help to effect repairs.<br>
+
+						As the years progressed, the 20th Century led to the reorganization of the School into a Modern Grammar School. The oldest existing part of the School which was built in the early 20th Century is known as the Thomas Manning Building, named in honour of the School’s founder. It is the most outstanding building on the entire School property and is currently used as library and classrooms.<br>
+
+						The Thomas Manning Building is a delightful structure which is constructed from timber and the rest on a masonry plinth. Typical of the Georgian architecture, the building is perfectly symmetrical in elevation. However, for its function in the tropics, the Architect has added several features. On all sides the building has been fitted with deep verandas to add shade. The vented steep gable roof expels hot air, and a cupola with fixed jalousies provide relief for any warm air trapped in the roof. The features combined have created a perfect example of colonial architecture.
+					</p>
+				</div>
+			</section>
+			<section class="section section-color ">
+				<div class=" box vision-statement">
+					<h2> Our Vision</h2>
+					<p> To be the educational institution of choice, providing superior academic, sports and co-curricular programmes in a modern, efficient and aesthetically pleasing student-centred environment.</p>
+					<h2> Our Mission</h2>
+					<p> By means of professional teamwork, Manning’s School will create opportunities for our students and staff to develop their potential and be able to confidently cope with the challenges of school and the society.</p>
+				</div>
+			</section>
+			
+			<!-- Teacher directory rows and search behavior are populated by about.js. -->
+			<section class="section">
+				<div class="box">
+					<h2> Teacher Directory</h2>
+					<p> Search by Teacher's Name or Subject.</p>
+					<label for="search-box">Search the teacher directory</label>
+					<input type="text" id="search-box" aria-label="Search by teacher name or subject">
+					<br>
+					
+					<table>
+						<thead>
+							<tr> 
+								<th scope="col">Teacher</th>
+								<th scope="col">Subject</th>
+							</tr>
+						</thead>
+						<tbody id="directory-table">	</tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<p> Manning's School | Savanna-la-mar, Westmoreland</p>
+		</footer>
+		<script src="js/index.js"></script>
+		<script src="js/about.js"></script>
+	</body>
+</html>
